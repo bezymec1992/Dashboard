@@ -45,7 +45,6 @@ aside {
   }
 
   .logo {
-    font-family: "Poppins-SemiBold", sans-serif;
     position: relative;
     display: flex;
     align-items: center;
@@ -57,6 +56,10 @@ aside {
 
     @include md {
       margin-bottom: 30px;
+    }
+
+    p {
+      font-weight: 700;
     }
 
     .logo__img {
@@ -96,6 +99,7 @@ aside {
     align-items: center;
     color: $gray;
     font-size: 14px;
+    font-weight: 500;
 
     .arrow {
       display: block;
@@ -152,13 +156,13 @@ aside {
       font-size: 14px;
       color: $black;
       padding-bottom: 5px;
-      font-family: "Poppins-Medium", sans-serif;
+      font-weight: 500;
     }
 
     .face__position {
       color: $gray;
       font-size: 11px;
-      font-family: "Poppins-Regular", sans-serif;
+
     }
   }
 }
