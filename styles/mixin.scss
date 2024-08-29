@@ -1,0 +1,33 @@
+//mixins
+
+@mixin xs {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+//vars
+$white: #fff;
+$green: #16C098;
+$bg: #FAFBFF;
+$black: black;
+$gray: #9197B3;
+$purple: #5932EA;
+
+// Fonts
+// @font-face {
+//   font-family: DMSans-Bold;
+//   src: url('../fonts/DMSans-Bold.ttf');
+// }
