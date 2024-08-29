@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*resets*/
 @font-face {
   font-family: Poppins-Regular;
@@ -97,8 +98,9 @@ aside {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
   aside {
+    padding: 27px 28px;
     position: absolute;
     top: 0;
     left: -250px;
@@ -131,9 +133,9 @@ aside .aside__btn .aside__btn-img {
   width: 20px;
   height: 20px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
   aside .aside__btn {
-    right: -68px;
+    right: -50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -243,9 +245,10 @@ aside .aside__face {
           align-items: center;
   gap: 10px;
 }
-aside .aside__face img {
+aside .aside__face .face__img {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 aside .aside__face .face__name {
   font-size: 14px;
@@ -259,7 +262,14 @@ aside .aside__face .face__position {
   font-family: "Poppins-Regular", sans-serif;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
+  .aside {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .open {
+    overflow: hidden;
+  }
   .open .aside {
     position: absolute;
     top: 0;
@@ -274,13 +284,8 @@ aside .aside__face .face__position {
             transform: rotate(180deg);
   }
 }
-@media (max-width: 1024px) and (max-width: 1024px) {
-  .open .aside__btn {
-    right: -50px;
-  }
-}
 main {
-  max-width: 968px;
+  max-width: 1024px;
   width: 100%;
   -webkit-box-flex: 3;
       -ms-flex: 3;
@@ -298,7 +303,7 @@ main .main__title {
   margin-bottom: 51px;
   font-size: 24px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
   main .main__title {
     text-align: center;
   }
@@ -306,7 +311,6 @@ main .main__title {
 main .main__wrapper {
   background-color: #fff;
   border-radius: 30px;
-  height: 500px;
   padding: 30px 38px 40px;
 }
 @media (max-width: 767px) {
@@ -362,6 +366,10 @@ main .main__wrapper .main__input {
   padding: 7px;
   border-radius: 10px;
 }
+main .main__wrapper .main__input img {
+  width: 24px;
+  height: 24px;
+}
 @media (max-width: 575px) {
   main .main__wrapper .main__input {
     background-color: #d2dbfe;
@@ -374,18 +382,198 @@ main .main__wrapper .main__input .input {
   padding-left: 10px;
 }
 
-@media (max-width: 1024px) {
-  .open .blur {
+@media (max-width: 1199px) {
+  .blur {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .open .blur {
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
     background: rgba(12, 11, 11, 0.5);
+    opacity: 1;
+    visibility: visible;
   }
 }
+.container {
+  width: 100%;
+  max-width: 890px;
+  margin-top: 25px;
+  /* Адаптивный дизайн */
+}
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.container th,
+.container td {
+  padding: 14px 0;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-family: "Poppins-Medium", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container th {
+  color: #9197B3;
+}
+.container button {
+  width: 80px;
+  height: 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: -1;
+}
+.container .active__btn {
+  color: #00B087;
+  border: 1px solid #00B087;
+  background-color: rgba(22, 192, 152, 0.3);
+}
+.container .inactive__btn {
+  color: #DF0404;
+  border: 1px solid #DF0404;
+  background-color: #FFC5C5;
+}
+@media (max-width: 767px) {
+  .container th,
+  .container td {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+}
+@media (max-width: 575px) {
+  .container th,
+  .container td {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1024px) {
+  .container table,
+  .container thead,
+  .container tbody,
+  .container th,
+  .container td,
+  .container tr {
+    display: block;
+    width: 100%;
+  }
+  .container tr {
+    margin-bottom: 30px;
+  }
+  .container th {
+    display: none;
+  }
+  .container td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .container td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+.pages {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 575px) {
+  .pages {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+}
+.pages .pages__txt {
+  color: #9197B3;
+  font-size: 14px;
+}
+.pages .numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.pages .numbers .number {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 3px;
+  border: 1px solid #9197B3;
+  background-color: #F5F5F5;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.pages .numbers .number:hover {
+  color: #fff;
+  background-color: #5932EA;
+  border: 1px solid #5932EA;
+}
+.pages .numbers .number:hover .number-arrow {
+  stroke: #fff;
+}
+.pages .numbers .number-arrow {
+  fill: none;
+  stroke: black;
+  width: 15px;
+  height: 15px;
+}
+.pages .numbers .number-arrow-left {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;

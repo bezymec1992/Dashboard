@@ -8,7 +8,8 @@ aside {
   max-width: 306px;
   transition: all 0.5s;
 
-  @include md {
+  @include lg {
+    padding: 27px 28px;
     position: absolute;
     top: 0;
     left: -250px;
@@ -37,8 +38,8 @@ aside {
       height: 20px;
     }
 
-    @include md {
-      right: -68px;
+    @include lg {
+      right: -50px;
       display: flex;
     }
   }
@@ -141,9 +142,10 @@ aside {
     align-items: center;
     gap: 10px;
 
-    img {
+    .face__img {
       width: 42px;
       height: 42px;
+      border-radius: 50%;
     }
 
     .face__name {
@@ -161,8 +163,15 @@ aside {
   }
 }
 
-@include md {
+@include lg {
+  .aside {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
   .open {
+    overflow: hidden;
+
     .aside {
       position: absolute;
       top: 0;
@@ -176,10 +185,6 @@ aside {
     .aside__btn {
       .aside__btn-img {
         transform: rotate(180deg);
-      }
-
-      @include md {
-        right: -50px;
       }
     }
   }

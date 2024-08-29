@@ -1,5 +1,5 @@
 main {
-  max-width: 968px;
+  max-width: 1024px;
   width: 100%;
   flex: 3;
   padding: 37px 28px;
@@ -14,7 +14,7 @@ main {
     margin-bottom: 51px;
     font-size: 24px;
 
-    @include md {
+    @include lg {
       text-align: center;
     }
   }
@@ -22,7 +22,6 @@ main {
   .main__wrapper {
     background-color: $white;
     border-radius: 30px;
-    height: 500px;
     padding: 30px 38px 40px;
 
     @include sm {
@@ -66,6 +65,11 @@ main {
       padding: 7px;
       border-radius: 10px;
 
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
       @include xs {
         background-color: #d2dbfe;
         max-width: 100%;
@@ -80,16 +84,196 @@ main {
   }
 }
 
-@include md {
+@include lg {
+  .blur {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: all 1s;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .open {
     .blur {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
       backdrop-filter: blur(5px);
       background: rgba(12, 11, 11, 0.5);
+      opacity: 1;
+      visibility: visible;
     }
+  }
+}
+
+
+//Table
+
+.container {
+  width: 100%;
+  max-width: 890px;
+  margin-top: 25px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 14px 0;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: "Poppins-Medium", sans-serif;
+    box-sizing: border-box;
+  }
+
+  th {
+    color: $gray;
+  }
+
+  button {
+    width: 80px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: -1;
+  }
+
+  .active__btn {
+    color: $active-btn;
+    border: 1px solid $active-btn;
+    background-color: rgba(22, 192, 152, 0.3);
+  }
+
+  .inactive__btn {
+    color: $inactive-btn;
+    border: 1px solid $inactive-btn;
+    background-color: #FFC5C5;
+  }
+
+  /* Адаптивный дизайн */
+  @include sm {
+
+    th,
+    td {
+      padding: 10px 0;
+      font-size: 14px;
+    }
+  }
+
+  @include xs {
+
+    th,
+    td {
+      font-size: 12px;
+    }
+  }
+
+  @include md {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      margin-bottom: 30px;
+    }
+
+    th {
+      display: none;
+    }
+
+    td {
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+}
+
+
+.pages {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include xs {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .pages__txt {
+    color: $gray;
+    font-size: 14px;
+  }
+
+  .numbers {
+    display: flex;
+    align-items: baseline;
+    align-items: center;
+    gap: 10px;
+
+    .number {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      border: 1px solid $gray;
+      background-color: #F5F5F5;
+      transition: all 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+        background-color: $purple;
+        border: 1px solid $purple;
+
+        .number-arrow {
+          stroke: $white;
+        }
+      }
+    }
+
+    .number-arrow {
+      fill: none;
+      stroke: $black;
+      width: 15px;
+      height: 15px;
+    }
+
+    .number-arrow-left {
+      transform: rotate(180deg);
+    }
+
+
+
   }
 }

@@ -88,7 +88,7 @@
     </ul>
 
     <div class="aside__face">
-      <img src="imgs/face.png" alt="face">
+      <img class="face__img" src="imgs/face.webp" alt="face">
       <div class="aside__face-info">
         <p class="face__name">Evano</p>
         <p class="face__position">Project Manager</p>
@@ -99,7 +99,6 @@
   <main class="main">
     <div class="blur"></div>
     <h1 class="main__title">Hello Evano 👋🏼,</h1>
-
     <div class="main__wrapper">
       <div class="main__info__wrapp">
         <div class="main__info">
@@ -111,11 +110,125 @@
           <input class="input" type="text" name="txt" placeholder="Search">
         </div>
       </div>
-
-
+      <div class="table container">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Company</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Country</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Customer Name">John Doe</td>
+              <td data-label="Company">Company A</td>
+              <td data-label="Phone Number"><a href="tel:+1 555-1234">+1 555-1234</a></td>
+              <td data-label="Email"><a href="mailto:john@example.com">john@example.com</a></td>
+              <td data-label="Country">USA</td>
+              <td data-label="Status">
+                <button class="active__btn">Active</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">Jane Smith</td>
+              <td data-label="Company">Company B</td>
+              <td data-label="Phone Number"><a href="tel:+44 20 7946 0958">+44 20 7946 0958</a></td>
+              <td data-label="Email"><a href="mailto:jane@example.com">jane@example.com</a></td>
+              <td data-label="Country">UK</td>
+              <td data-label="Status">
+                <button class="inactive__btn">Inactive</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">Michael Brown</td>
+              <td data-label="Company">Company C</td>
+              <td data-label="Phone Number"><a href="tel:+49 30 123456">+49 30 123456</a></td>
+              <td data-label="Email"><a href="mailto:michael@example.com">michael@example.com</a></td>
+              <td data-label="Country">Germany</td>
+              <td data-label="Status">
+                <button class="active__btn">Active</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">Emily White</td>
+              <td data-label="Company">Company D</td>
+              <td data-label="Phone Number"><a href="tel:+33 1 23456789">+33 1 23456789</a></td>
+              <td data-label="Email"><a href="mailto:emily@example.com">emily@example.com</a></td>
+              <td data-label="Country">France</td>
+              <td data-label="Status">
+                <button class="inactive__btn">Inactive</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">John Doe</td>
+              <td data-label="Company">Company A</td>
+              <td data-label="Phone Number"><a href="tel:+1 555-1234">+1 555-1234</a></td>
+              <td data-label="Email"><a href="mailto:john@example.com">john@example.com</a></td>
+              <td data-label="Country">USA</td>
+              <td data-label="Status">
+                <button class="active__btn">Active</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">Jane Smith</td>
+              <td data-label="Company">Company B</td>
+              <td data-label="Phone Number"><a href="tel:+44 20 7946 0958">+44 20 7946 0958</a></td>
+              <td data-label="Email"><a href="mailto:jane@example.com">jane@example.com</a></td>
+              <td data-label="Country">UK</td>
+              <td data-label="Status">
+                <button class="inactive__btn">Inactive</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">Michael Brown</td>
+              <td data-label="Company">Company C</td>
+              <td data-label="Phone Number"><a href="tel:+49 30 123456">+49 30 123456</a></td>
+              <td data-label="Email"><a href="mailto:michael@example.com">michael@example.com</a></td>
+              <td data-label="Country">Germany</td>
+              <td data-label="Status">
+                <button class="active__btn">Active</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Customer Name">Emily White</td>
+              <td data-label="Company">Company D</td>
+              <td data-label="Phone Number"><a href="tel:+33 1 23456789">+33 1 23456789</a></td>
+              <td data-label="Email"><a href="mailto:emily@example.com">emily@example.com</a></td>
+              <td data-label="Country">France</td>
+              <td data-label="Status">
+                <button class="inactive__btn">Inactive</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pages">
+        <p class="pages__txt">Showing data 1 to 8 of 256K entries</p>
+        <div class="numbers">
+          <span class="number">
+            <svg class="number-arrow number-arrow-left">
+              <use xlink:href="imgs/sprite.svg#arrow"></use>
+            </svg>
+          </span>
+          <span class="number">1</span>
+          <span class="number">2</span>
+          <span class="number">3</span>
+          <span class="number">4</span>
+          <span class="numbers__dots">...</span>
+          <span class="number">40</span>
+          <span class="number">
+            <svg class="number-arrow">
+              <use xlink:href="imgs/sprite.svg#arrow"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
     </div>
   </main>
-
   <script src="script.js"></script>
 </body>
 

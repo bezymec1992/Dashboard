@@ -18,6 +18,12 @@
   }
 }
 
+@mixin lg {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
 //vars
 $white: #fff;
 $green: #16C098;
@@ -25,6 +31,8 @@ $bg: #FAFBFF;
 $black: black;
 $gray: #9197B3;
 $purple: #5932EA;
+$active-btn: #00B087;
+$inactive-btn: #DF0404;
 
 // Fonts
 // @font-face {
